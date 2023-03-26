@@ -1,4 +1,8 @@
 * {
-    background: gray;
-    
+  background: gray;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
 }
