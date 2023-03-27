@@ -1,9 +1,9 @@
-import Card from "../Card/Card";
+import BasicCard from "../Card/Card";
 
 function ItemListContainer() {
   return (
     <>
-      <Card />
+      <BasicCard />
     </>
   );
 }
