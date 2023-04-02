@@ -1,11 +1,9 @@
-import BasicCard from "../Card/Card";
+import { items } from "../../products/data";
 
-function ItemListContainer() {
-  return (
-    <>
-      <BasicCard />
-    </>
-  );
+function ItemListContainer({ items }) {
+  const listItems = items.map((element) => {
+    return <p>{element.price}</p>;
+  });
 }
 
 export default ItemListContainer;

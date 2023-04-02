@@ -1,8 +1,13 @@
-const CartWidget = ({ cantCart }) => {
+import cartLogo from "../../logo/cartLogo.png";
+const CartWidget = ({ quantity }) => {
   return (
     <>
-      <button className="btn btn-dark">Cart</button>
-      <p>{cantCart}</p>
+      <button className="btn btn-dark">
+        <p>
+          <img src={cartLogo} />
+          {quantity}
+        </p>
+      </button>
     </>
   );
 };
