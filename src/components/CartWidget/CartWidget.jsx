@@ -1,4 +1,4 @@
-import cartLogo from "../../logo/cartLogo.png";
+import cartLogo from "../../logo/iconmonstr-shopping-cart.svg";
 const CartWidget = ({ quantity }) => {
   return (
     <>

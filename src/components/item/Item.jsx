@@ -1,9 +1,15 @@
-const Item = ({ props }) => {
-  return;
+import items from "../../products/data";
 
-  <>
-    <img src="" />
-  </>;
-};
+export function Item({ number }) {
+  const ItemList = items.map((element) => (
+    <>
+      <img src={element.image} alt="item" />
+      <p>{element.description}</p>
+      <p>{element.price}</p>
+    </>
+  ));
 
-export default CartWidget;
+  return ItemList[{ number }];
+}
+
+export default Item;

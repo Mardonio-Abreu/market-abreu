@@ -1,4 +1,5 @@
 import Card from "react-bootstrap/Card";
+import OutlinedButton from "../Button/Button";
 
 export default function BasicCard({ props }) {
   let image = props.image;
@@ -17,6 +18,7 @@ export default function BasicCard({ props }) {
           {price}
         </Card.Text>
       </Card.Body>
+      <OutlinedButton />
     </Card>
   );
 }
