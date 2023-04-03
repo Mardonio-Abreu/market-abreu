@@ -7,7 +7,7 @@ import CartWidget from "../CartWidget/CartWidget.jsx";
 function ColorSchemes() {
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="primary" variant="light">
         <Container>
           <Navbar.Brand href="#home">
             <img src={logo} />

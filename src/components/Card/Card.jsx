@@ -1,18 +1,22 @@
 import Card from "react-bootstrap/Card";
 
-function BasicCard({ product }) {
+export default function BasicCard({ props }) {
+  let image = props.image;
+  let item = props.item;
+  let description = props.description;
+  let price = props.price;
+
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={product.image} />
+      <Card.Img variant="top" src={image} />
       <Card.Body>
-        <Card.Title>{product.item}</Card.Title>
+        <Card.Title>{item}</Card.Title>
         <Card.Text>
-          <p>{product.description}</p>
-          <p>{product.price}</p>
+          {description}
+          <br />
+          {price}
         </Card.Text>
       </Card.Body>
     </Card>
   );
 }
-
-export default BasicCard;

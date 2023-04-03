@@ -36,7 +36,7 @@ export const items = [
 
   {
     item: "6",
-    image: "images/tote.jpeg",
+    image: "images/tote.jpg",
     description: "2600 black tote",
     price: "$17",
   },
