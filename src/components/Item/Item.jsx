@@ -1,6 +1,6 @@
 import items from "../../products/data";
 
-export function Item({ number }) {
+const Item = () => {
   const ItemList = items.map((element) => (
     <>
       <img src={element.image} alt="item" />
@@ -9,7 +9,7 @@ export function Item({ number }) {
     </>
   ));
 
-  return ItemList[{ number }];
-}
+  return ItemList;
+};
 
 export default Item;

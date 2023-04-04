@@ -1,7 +1,7 @@
 import Figure from "react-bootstrap/Figure";
-import van from "../../images/1280px-2600_van.jpg";
+import van from "../../logo/1280px-2600_van.jpg";
 
-function Landing() {
+function Home() {
   return (
     <Figure>
       <Figure.Image width={171} height={180} alt="171x180" src={van} />
@@ -22,4 +22,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default Home;

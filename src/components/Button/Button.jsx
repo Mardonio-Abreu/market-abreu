@@ -1,11 +1,11 @@
 import Button from "react-bootstrap/Button";
 
-function OutlinedButton() {
+const OutlinedButton = ({ number }) => {
   return (
     <>
       <Button variant="outline-primary">Detail</Button>{" "}
     </>
   );
-}
+};
 
 export default OutlinedButton;

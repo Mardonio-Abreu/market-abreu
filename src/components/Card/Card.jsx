@@ -2,6 +2,7 @@ import Card from "react-bootstrap/Card";
 import OutlinedButton from "../Button/Button";
 
 export default function BasicCard({ props }) {
+  let index = props.index;
   let image = props.image;
   let item = props.item;
   let description = props.description;
@@ -18,7 +19,7 @@ export default function BasicCard({ props }) {
           {price}
         </Card.Text>
       </Card.Body>
-      <OutlinedButton />
+      <OutlinedButton number={props.index} />
     </Card>
   );
 }

@@ -9,15 +9,14 @@ function ColorSchemes() {
     <>
       <Navbar bg="primary" variant="light">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/home">
             <img src={logo} />
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">
-              <CartWidget quantity={5} />
+            <Nav.Link href="/products">
+              <h3>Products</h3>
             </Nav.Link>
+            <CartWidget quantity={5} />
           </Nav>
         </Container>
       </Navbar>
