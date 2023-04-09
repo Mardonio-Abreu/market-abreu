@@ -1,5 +1,7 @@
 import Button from "react-bootstrap/Button";
 
+const itemNumber = ({ number }) => {};
+
 const OutlinedButton = ({ number }) => {
   return (
     <>

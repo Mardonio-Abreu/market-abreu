@@ -1,15 +1,18 @@
+import { useParams } from "react-router-dom";
 import items from "../../products/data";
 
 const Item = () => {
-  const ItemList = items.map((element) => (
-    <>
-      <img src={element.image} alt="item" />
-      <p>{element.description}</p>
-      <p>{element.price}</p>
-    </>
-  ));
+  let { id } = useParams();
 
-  return ItemList;
+  let item = items[id];
+
+  return (
+    <>
+      <img src={item.image} alt="item" />
+      <p>{item.description}</p>
+      <p>{item.price}</p>
+    </>
+  );
 };
 
 export default Item;
