@@ -6,10 +6,6 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import Item from "./components/Item/Item";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const App = () => {
-  const detailArray = (items) => {
-    items.map();
-  };
-
   return (
     <>
       <ColorSchemes />
@@ -18,7 +14,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/items" element={<ItemListContainer />} />
-          <Route path="/item/:id" element={<Item />} />
+          <Route path="/:category/:id" element={<Item />} />
         </Routes>
       </Router>
     </>
