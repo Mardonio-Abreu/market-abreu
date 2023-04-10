@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import items from "../../products/data";
 
-const Item = () => {
+export const Category = () => {
   let { category, id } = useParams();
 
   let item = items[category][id];
@@ -10,13 +10,15 @@ const Item = () => {
 
   let newPath = path.concat(`${item.image}`);
 
-  return (
+  console.log(category);
+
+  {
     <>
       <img src={newPath} alt="item" />
       <p>{item.description}</p>
       <p>{item.price}</p>
-    </>
-  );
+    </>;
+  }
 };
 
-export default Item;
+export default Category;

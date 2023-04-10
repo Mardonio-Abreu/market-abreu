@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { NavDropdown } from "react-bootstrap";
 import logo from "../../logo/logo_250x150.png";
 import CartWidget from "../CartWidget/CartWidget.jsx";
+import CategoryNav from "../CategoryNav/CategoryNav";
 
 function ColorSchemes() {
   return (
@@ -16,14 +17,8 @@ function ColorSchemes() {
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <NavDropdown bg="primary" title="Products" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/hats">Hats</NavDropdown.Item>
-              <NavDropdown.Item href="/hoodies">Hoodies</NavDropdown.Item>
-              <NavDropdown.Item href="/t-shirts">T-shirts</NavDropdown.Item>
-              <NavDropdown.Item href="/totes">Totes</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/items">All products</NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link href="/items">All Products</Nav.Link>
+            <CategoryNav />
           </Nav>
           <CartWidget quantity={5} />
         </Container>
