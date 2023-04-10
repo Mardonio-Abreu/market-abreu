@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
-import OutlinedButton from "../Button/Button";
 
 export default function BasicCard({ props }) {
   let supIndex = props.supIndex;
