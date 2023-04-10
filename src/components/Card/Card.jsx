@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import OutlinedButton from "../Button/Button";
 
 export default function BasicCard({ props }) {
+  let supIndex = props.supIndex;
   let index = props.index;
   let image = props.image;
   let item = props.item;
@@ -10,7 +11,7 @@ export default function BasicCard({ props }) {
   let price = props.price;
 
   return (
-    <Link to={`/item/${props.index}`}>
+    <Link to={`/${props.supIndex}/${props.index}`}>
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={image} />
         <Card.Body>
