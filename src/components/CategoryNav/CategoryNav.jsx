@@ -1,6 +1,6 @@
-import { Nav } from "react-bootstrap";
-import categories from "../../products/categories";
 import { Link } from "react-router-dom";
+import { Nav, Dropdown } from "react-bootstrap";
+import categories from "../../products/categories";
 
 export const CategoryNav = () =>
   categories.map((element) => {
@@ -10,9 +10,9 @@ export const CategoryNav = () =>
     let newPath = path.concat(category);
 
     return (
-      <Nav.Link href={newPath} key={id}>
-        {category}
-      </Nav.Link>
+      <Dropdown.Item key={id}>
+        <Link>{category}</Link>
+      </Dropdown.Item>
     );
   });
 

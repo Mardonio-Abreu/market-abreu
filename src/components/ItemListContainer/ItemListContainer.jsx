@@ -1,28 +1,25 @@
-import { useEffect, useState } from "react";
-import { doc, getFirestore, getDocs, collection } from "firebase/firestore";
-import items from "../../products/data";
+import React, { useEffect, useState } from "react";
+import { getFirestore, getDocs, collection, doc } from "firebase/firestore";
 import BasicCard from "../Card/Card";
 
 function ItemListContainer() {
-  const [itemsCollection, setProducts] = useState();
+  const [items, setProducts] = useState(null);
   useEffect(() => {
     const db = getFirestore();
 
-    const items = collection(db, "items");
+    const itemsCollection = collection(db, "items");
 
     getDocs(itemsCollection).then((snapshot) => {
       setProducts(
         snapshot.docs.map((doc) => ({
-          id: snapshot.item_id,
-          item: snapshot.item,
-          description: snapshot.description,
-          image: snapshot.image,
-          price: snapshot.price,
-          data: snapshot.data(),
+          id: doc.id,
+          data: doc.data(),
         }))
       );
     });
   }, []);
+
+  return console.log({ items });
 
   // let ItemList = [];
 

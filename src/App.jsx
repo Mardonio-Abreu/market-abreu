@@ -9,7 +9,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const App = () => {
   return (
     <>
-      <ColorSchemes />
+      <ItemListContainer />
+      {/*  <ColorSchemes />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -18,7 +19,7 @@ const App = () => {
           <Route path="/:category/:id" element={<Item />} />
           <Route path="/category/:category" element={<Category />} />
         </Routes>
-      </Router>
+      </Router> */}
     </>
   );
 };
