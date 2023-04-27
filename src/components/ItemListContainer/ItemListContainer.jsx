@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getFirestore, getDocs, collection, doc } from "firebase/firestore";
+import { getFirestore, getDocs, collection } from "firebase/firestore";
 import BasicCard from "../Card/Card";
 
 function ItemListContainer() {
@@ -11,23 +11,14 @@ function ItemListContainer() {
 
     getDocs(itemsCollection).then((snapshot) => {
       setProducts(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
+        snapshot.docs.map((producto) => ({
+          id: producto.id,
+          ...producto.data(),
         }))
       );
     });
+    return;
   }, []);
-
-  return console.log({ items });
-
-  // let ItemList = [];
-
-  /* for (let i = 0; i < items.length; i++) {
-    ItemList[i] = items[i].map((element) => <BasicCard props={element} />);
-  } */
-
-  //return ItemList;
 }
 
 export default ItemListContainer;
