@@ -9,7 +9,7 @@ export default function BasicCard({ props }) {
   let price = props.price;
 
   return (
-    <Link to={`/${props.supIndex}/${props.index}`}>
+    <Link to={`/${props.id}`}>
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={image} />
         <Card.Body>

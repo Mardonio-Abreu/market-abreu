@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/style.css";
+import ItemList from "./components/ItemList/ItemList";
 import ColorSchemes from "./components/NavBar/NavBar";
 import Home from "./components/Home/Home";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
