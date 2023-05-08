@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { db } from "../../firebase/firebaseConfig";
 import { collection, query, getDocs } from "firebase/firestore";
+import BasicCard from "../Card/Card";
 
-function ItemList() {
+export function ItemList() {
   const [items, setItems] = useState([]);
   const q = query(collection(db, "items"));
 
@@ -17,7 +18,16 @@ function ItemList() {
     };
 
     getItems();
-  });
+  }, []);
+
+  return (
+    <div>
+      <h1>Surprise MotherFather!</h1>
+      {items.map((item) => {
+        return <BasicCard item={item} />;
+      })}
+    </div>
+  );
 }
 
 export default ItemList;

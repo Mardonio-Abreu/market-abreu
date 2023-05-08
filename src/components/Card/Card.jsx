@@ -1,26 +1,17 @@
-import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 
-export default function BasicCard({ props }) {
-  let id = props.index;
-  let image = props.image;
-  let item = props.item;
-  let description = props.description;
-  let price = props.price;
-
+export default function BasicCard({ item }) {
   return (
-    <Link to={`/${props.id}`}>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={image} />
-        <Card.Body>
-          <Card.Title>{item}</Card.Title>
-          <Card.Text>
-            {description}
-            <br />
-            {price}
-          </Card.Text>
-        </Card.Body>
-      </Card>
-    </Link>
+    <Card style={{ width: "18rem" }}>
+      <Card.Img variant="top" src={item.image} />
+      <Card.Body>
+        <Card.Title>{item.item}</Card.Title>
+        <Card.Text>
+          {item.description}
+          <br />
+          {item.price}
+        </Card.Text>
+      </Card.Body>
+    </Card>
   );
 }
