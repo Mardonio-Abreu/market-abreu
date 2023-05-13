@@ -10,10 +10,10 @@ import {
 } from "firebase/firestore";
 import BasicCard from "../Card/Card";
 
-export function ItemDetail() {
-  let { id } = useParams();
+export function Category() {
+  let { category } = useParams();
   const [items, setItems] = useState([]);
-  const q = query(collection(db, "items"), where(documentId(), "==", id));
+  const q = query(collection(db, "items"), where("item", "==", category));
 
   useEffect(() => {
     const getItems = async () => {
@@ -33,4 +33,4 @@ export function ItemDetail() {
   });
 }
 
-export default ItemDetail;
+export default Category;

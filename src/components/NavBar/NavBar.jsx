@@ -15,7 +15,7 @@ function NavigationBar() {
           <ButtonDark />
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/allItems">All Products</Nav.Link>
+            <Nav.Link href="/items">All Items</Nav.Link>
           </Nav>
           <CartWidget quantity={5} />
         </Container>
