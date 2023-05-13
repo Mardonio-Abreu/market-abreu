@@ -4,7 +4,7 @@ import logo from "../../logo/logo_250x150.png";
 import CartWidget from "../CartWidget/CartWidget.jsx";
 import ButtonDark from "../NavbarDropdownButton/NavbarDropdownButton";
 
-function ColorSchemes() {
+function NavigationBar() {
   return (
     <>
       <Navbar bg="primary" variant="light">
@@ -15,7 +15,7 @@ function ColorSchemes() {
           <ButtonDark />
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/items">All Products</Nav.Link>
+            <Nav.Link href="/allItems">All Products</Nav.Link>
           </Nav>
           <CartWidget quantity={5} />
         </Container>
@@ -24,4 +24,4 @@ function ColorSchemes() {
   );
 }
 
-export default ColorSchemes;
+export default NavigationBar;
