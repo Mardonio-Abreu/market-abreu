@@ -17,7 +17,9 @@ function NavigationBar() {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/items">All Items</Nav.Link>
           </Nav>
-          <CartWidget quantity={5} />
+          <Link to={"/cart"}>
+            <CartWidget quantity={5} />
+          </Link>
         </Container>
       </Navbar>
     </>

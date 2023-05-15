@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { db } from "../../firebase/firebaseConfig";
@@ -8,7 +11,6 @@ import {
   where,
   documentId,
 } from "firebase/firestore";
-import ProductCard from "../Product/Product";
 
 export function ItemDetail() {
   let { id } = useParams();
@@ -31,7 +33,23 @@ export function ItemDetail() {
   return (
     <>
       {items.map((item) => {
-        return <ProductCard />;
+        return (
+          <Card style={{ width: "20rem" }}>
+            <Card.Img variant="top" src={item.image} />
+            <Card.Title>{item.item}</Card.Title>
+            <Card.Text>
+              {item.description}
+              <br />
+              {item.price}
+            </Card.Text>
+            <input type="number" placeholder="Quantity" />
+            <Button variant="primary">Add to cart</Button>{" "}
+            <Button variant="success">Pay</Button>
+            <Link to={"/items"}>
+              <Button variant="info">Keep buying</Button>
+            </Link>
+          </Card>
+        );
       })}
       ;
     </>

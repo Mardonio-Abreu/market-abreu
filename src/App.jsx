@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import ItemDetail from "./components/ItemDetail/ItemDetail";
 import Category from "./components/Category/Category";
+import { Cart } from "./components/Cart/Cart";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/items" element={<ItemListContainer />} />
         <Route path="/itemDetail/:id" element={<ItemDetail />} />
         <Route path="/items/:category" element={<Category />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
   );

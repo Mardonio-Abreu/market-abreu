@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card";
-export default function ProductCard({ item }) {
+import { useParams } from "react-router-dom";
+export default function ProductCard(item) {
   return (
     <Card style={{ width: "16rem" }}>
       <Card.Img variant="top" src={item.image} />
