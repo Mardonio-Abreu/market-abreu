@@ -20,13 +20,13 @@ export function Category() {
       const querySnapshot = await getDocs(q);
       const docs = [];
       querySnapshot.forEach((doc) => {
-        docs.push({ ...doc.data() });
+        docs.push({ ...doc.data(), id: doc.id });
       });
       setItems(docs);
     };
 
     getItems();
-  }, []);
+  }, [category]);
 
   return items.map((item) => {
     return <BasicCard item={item} />;

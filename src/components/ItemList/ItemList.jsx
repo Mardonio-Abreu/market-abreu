@@ -22,13 +22,11 @@ export function ItemList() {
   }, []);
 
   return (
-    <Container>
-      <Row>
-        {items.map((item) => {
-          return <BasicCard item={item} />;
-        })}
-      </Row>
-    </Container>
+    <>
+      {items.map((item) => {
+        return <BasicCard item={item} />;
+      })}
+    </>
   );
 }
 

@@ -23,15 +23,13 @@ function ButtonDark() {
   return (
     <>
       <Dropdown>
-        <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
-          Items
-        </Dropdown.Toggle>
+        <Dropdown.Toggle variant="secondary">Items</Dropdown.Toggle>
         <Dropdown.Menu variant="dark">
           {categories.map((category) => {
             return (
-              <Link to={`/items/${category.category}`}>
-                <Dropdown.Item>{category.tag}</Dropdown.Item>
-              </Link>
+              <Dropdown.Item>
+                <Link to={`/items/${category.category}`}>{category.tag}</Link>
+              </Dropdown.Item>
             );
           })}
         </Dropdown.Menu>

@@ -8,7 +8,7 @@ import {
   where,
   documentId,
 } from "firebase/firestore";
-import BasicCard from "../Card/Card";
+import ProductCard from "../Product/Product";
 
 export function ItemDetail() {
   let { id } = useParams();
@@ -20,17 +20,22 @@ export function ItemDetail() {
       const querySnapshot = await getDocs(q);
       const docs = [];
       querySnapshot.forEach((doc) => {
-        docs.push({ ...doc.data() });
+        docs.push({ ...doc.data(), id: doc.id });
       });
       setItems(docs);
     };
 
     getItems();
-  }, []);
+  }, [id]);
 
-  return items.map((item) => {
-    return <BasicCard item={item} />;
-  });
+  return (
+    <>
+      {items.map((item) => {
+        return <ProductCard />;
+      })}
+      ;
+    </>
+  );
 }
 
 export default ItemDetail;
