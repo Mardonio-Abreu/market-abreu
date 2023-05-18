@@ -24,7 +24,7 @@ export function ItemList() {
   return (
     <>
       {items.map((item) => {
-        return <BasicCard item={item} />;
+        return <BasicCard item={item} key={item.id} />;
       })}
     </>
   );

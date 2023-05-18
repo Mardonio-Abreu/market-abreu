@@ -4,19 +4,19 @@ function ButtonDark() {
   const categories = [
     {
       category: "Hat",
-      tag: "Hats",
+      key: "Hats",
     },
     {
       category: "Hoodie",
-      tag: "Hoodies",
+      key: "Hoodies",
     },
     {
       category: "T-shirt",
-      tag: "T-shirts",
+      key: "T-shirts",
     },
     {
       category: "Tote",
-      tag: "Totes",
+      key: "Totes",
     },
   ];
 
@@ -27,8 +27,8 @@ function ButtonDark() {
         <Dropdown.Menu variant="dark">
           {categories.map((category) => {
             return (
-              <Dropdown.Item>
-                <Link to={`/items/${category.category}`}>{category.tag}</Link>
+              <Dropdown.Item key={category.key}>
+                <Link to={`/items/${category.category}`}>{category.key}</Link>
               </Dropdown.Item>
             );
           })}
