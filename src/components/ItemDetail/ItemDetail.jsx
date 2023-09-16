@@ -57,6 +57,7 @@ export function ItemDetail() {
   return (
     <>
       {items.map((item) => {
+                     
         return (
           <Card style={{ width: "25rem" }} key={item.id}>
             <Card.Img variant="top" src={item.image} />
@@ -72,8 +73,7 @@ export function ItemDetail() {
                 type="number"
                 placeholder="Quantity"
                 name="quantity"
-                value={quantity}
-                onSubmit={setValues(item.id, quantity)}
+                onSubmit={setValues(item.id)}
               />
               <input type="submit" />
             </form>
