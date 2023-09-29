@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { initializeApp } from "firebase/app";
-import "./css/reset.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/style.css";
 
