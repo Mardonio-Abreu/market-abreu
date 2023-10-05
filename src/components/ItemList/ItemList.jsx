@@ -2,7 +2,6 @@ import { useState, useEffect, useParam } from "react";
 import { db } from "../../firebase/firebaseConfig";
 import { collection, query, getDocs } from "firebase/firestore";
 import BasicCard from "../Card/Card";
-import { Container, Row, Col } from "react-bootstrap";
 
 export function ItemList() {
   const [items, setItems] = useState([]);

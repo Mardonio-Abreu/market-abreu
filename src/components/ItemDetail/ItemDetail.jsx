@@ -1,23 +1,30 @@
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { db } from "../../firebase/firebaseConfig";
+import { collection, query, getDocs, where } from "firebase/firestore";
+import BasicCard from "../Card/Card";
 
-function ItemDetail() {
-  const itemValues = useContext();
+export function ItemDetail() {
+  let { id } = useParams();
+  const [items, setItems] = useState([]);
+  const q = query(collection(db, "items"), where("id", "==", id));
 
-  return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-  );
+  useEffect(() => {
+    const getItems = async () => {
+      const querySnapshot = await getDocs(q);
+      const docs = [];
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setItems(docs);
+    };
+
+    getItems();
+    console.log(items);
+
+  return items.map((item) => {
+    return <BasicCard item={item} />;
+  });
 }
 
 export default ItemDetail;
