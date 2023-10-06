@@ -1,13 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { db } from "../../firebase/firebaseConfig";
-import {
-  collection,
-  query,
-  getDocs,
-  where,
-  documentId,
-} from "firebase/firestore";
+import { collection, query, getDocs, where } from "firebase/firestore";
 import BasicCard from "../Card/Card";
 
 export function Category() {
@@ -26,7 +20,7 @@ export function Category() {
     };
 
     getItems();
-  }, [category]);
+  }, [q, category]);
 
   return items.map((item) => {
     return <BasicCard item={item} />;

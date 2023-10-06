@@ -4,8 +4,8 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import NavigationBar from "./components/NavBar/NavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
-import ItemDetail from "./components/ItemDetail/ItemDetail";
 import Category from "./components/Category/Category";
+import ItemDetail from "./components/ItemDetail/ItemDetail";
 import { Cart } from "./components/Cart/Cart";
 
 const App = () => {
