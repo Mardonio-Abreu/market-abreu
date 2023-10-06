@@ -1,30 +1,30 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { db } from "../../firebase/firebaseConfig";
-import { collection, query, getDocs, where } from "firebase/firestore";
-import BasicCard from "../Card/Card";
+import { doc, getDoc } from "firebase/firestore";
 
 export function ItemDetail() {
-  let { id } = useParams();
-  const [items, setItems] = useState([]);
-  const q = query(collection(db, "items"), where("id", "==", id));
+  let itemId = 0;
+  const [item, setItem] = useState();
+  const docRef = doc(db, "items", itemId);
 
   useEffect(() => {
     const getItems = async () => {
-      const querySnapshot = await getDocs(q);
-      const docs = [];
-      querySnapshot.forEach((doc) => {
-        docs.push({ ...doc.data(), id: doc.id });
-      });
-      setItems(docs);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        setItem(docSnap.data());
+      } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+      }
     };
 
     getItems();
-    console.log(items);
+    console.log(item);
+  }, [item, docRef]);
 
-  return items.map((item) => {
-    return <BasicCard item={item} />;
-  });
+  return <h1>Surprise MotherFather!</h1>;
 }
 
 export default ItemDetail;
