@@ -1,7 +1,7 @@
 export function Cart() {
   return (
     <>
-      <h1>Surprise MotherFather</h1>
+      <h1>Surprise MotherFather!</h1>
     </>
   );
 }
