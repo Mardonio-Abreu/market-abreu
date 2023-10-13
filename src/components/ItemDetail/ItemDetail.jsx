@@ -24,7 +24,6 @@ export function ItemDetail() {
     };
 
     getItems();
-    console.log(item);
   }, []);
 
   return (
@@ -41,15 +40,7 @@ export function ItemDetail() {
                   <br />
                   Price ${item.price}
                 </Card.Text>
-                <Purchase />
-                <Form.Select aria-label="Default select example">
-                  <option>Quantity</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </Form.Select>
+                <Purchase id={item.id} />
               </Card.Body>
             </Card>
           </div>

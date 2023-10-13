@@ -7,11 +7,7 @@ export default function BasicCard({ item }) {
       <Card style={{ width: "16rem" }}>
         <Card.Img variant="top" src={item.image} />
         <Card.Title>{item.item}</Card.Title>
-        <Card.Text>
-          {item.description}
-          <br />
-          {item.price}
-        </Card.Text>
+        <Card.Text>{item.price}</Card.Text>
       </Card>
     </Link>
   );

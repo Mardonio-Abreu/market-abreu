@@ -1,14 +1,14 @@
+import { Form } from "react-bootstrap";
 import React, { useState } from "react";
 
-function Purchase() {
+function Purchase({ id }) {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    quantity: 0,
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const { value } = e.target;
+    setFormData(value);
   };
 
   const handleSubmit = (e) => {
@@ -19,36 +19,23 @@ function Purchase() {
 
   return (
     <div className="container">
-      <h1>Purchase</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id={id}>
         <div className="mb-3">
-          <label htmlFor="name" className="form-label">
-            Purchase
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="name"
-            name="name"
-            value={formData.name}
+          <Form.Select
+            aria-label="Default select example"
             onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
+            id="quantity"
+          >
+            <option>Quantity</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </Form.Select>
         </div>
         <button type="submit" className="btn btn-primary">
-          Submit
+          Buy me!
         </button>
       </form>
     </div>
