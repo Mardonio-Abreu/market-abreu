@@ -2,19 +2,19 @@ import { Form } from "react-bootstrap";
 import React, { useState } from "react";
 
 function Purchase({ id }) {
-  const [formData, setFormData] = useState({
+  const [itemQuantity, setItemQuantity] = useState({
     quantity: 0,
   });
 
   const handleChange = (e) => {
     const { value } = e.target;
-    setFormData(value);
+    setItemQuantity(value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission here, e.g., send data to the server or perform client-side validation.
-    console.log(formData);
+    console.log(itemQuantity);
   };
 
   return (
