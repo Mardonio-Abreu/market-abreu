@@ -1,7 +1,13 @@
 import { Form } from "react-bootstrap";
-import React, { useState } from "react";
+import { useState } from "react";
+import { useCart } from "../Context/CartContextProvider";
+import { useParams } from "react-router-dom";
 
-function Purchase({ id }) {
+const Purchase = () => {
+  const { id } = useParams();
+
+  const cart = useCart();
+
   const [itemQuantity, setItemQuantity] = useState({
     quantity: 0,
   });
@@ -12,9 +18,10 @@ function Purchase({ id }) {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     // Handle form submission here, e.g., send data to the server or perform client-side validation.
-    console.log(itemQuantity);
+    cart.addItem(id, itemQuantity);
+    console.log(cart);
   };
 
   return (
@@ -40,6 +47,6 @@ function Purchase({ id }) {
       </form>
     </div>
   );
-}
+};
 
 export default Purchase;

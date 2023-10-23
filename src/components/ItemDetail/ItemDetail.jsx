@@ -5,8 +5,10 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { db } from "../../firebase/firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
+import { useCart } from "../Context/CartContextProvider";
 
 export function ItemDetail() {
+  const { items } = useCart();
   const { id } = useParams();
   const [item, setItem] = useState(null);
   const docRef = doc(db, "items", id);

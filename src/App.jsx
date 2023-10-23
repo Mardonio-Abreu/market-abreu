@@ -7,20 +7,23 @@ import Home from "./components/Home/Home";
 import Category from "./components/Category/Category";
 import ItemDetail from "./components/ItemDetail/ItemDetail";
 import { Cart } from "./components/Cart/Cart";
+import CartContextProvider from "./components/Context/CartContextProvider";
 
 const App = () => {
   return (
-    <Router>
-      <NavigationBar />
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/items" element={<ItemListContainer />} />
-        <Route path="/itemDetail/:id" element={<ItemDetail />} />
-        <Route path="/items/:category" element={<Category />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-    </Router>
+    <CartContextProvider>
+      <Router>
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/items" element={<ItemListContainer />} />
+          <Route path="/itemDetail/:id" element={<ItemDetail />} />
+          <Route path="/items/:category" element={<Category />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </Router>
+    </CartContextProvider>
   );
 };
 
