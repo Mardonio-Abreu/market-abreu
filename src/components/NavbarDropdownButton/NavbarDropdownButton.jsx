@@ -23,8 +23,8 @@ function ButtonDark() {
   return (
     <>
       <Dropdown>
-        <Dropdown.Toggle variant="secondary">Items</Dropdown.Toggle>
-        <Dropdown.Menu variant="dark">
+        <Dropdown.Toggle>Items</Dropdown.Toggle>
+        <Dropdown.Menu>
           {categories.map((category) => {
             return (
               <Dropdown.Item key={category.key}>

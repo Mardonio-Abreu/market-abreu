@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 const Purchase = () => {
   const { id } = useParams();
 
-  const cart = useCart();
+  const { addItem, getCart } = useCart();
 
   const [itemQuantity, setItemQuantity] = useState({
     quantity: 0,
@@ -18,10 +18,10 @@ const Purchase = () => {
   };
 
   const handleSubmit = (e) => {
-    //e.preventDefault();
-    // Handle form submission here, e.g., send data to the server or perform client-side validation.
-    cart.addItem(id, itemQuantity);
-    console.log(cart);
+    e.preventDefault();
+    addItem(1, id, itemQuantity);
+    console.log("Aquí toy!");
+    console.log(getCart(1));
   };
 
   return (
